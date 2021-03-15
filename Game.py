@@ -65,6 +65,22 @@ class Game:
 		else:
 			self.end = True
 			
+	def getCol (self, index):
+		col = []
+		for row in self.board:
+			col.append(row(index))
+		return col
+		
+	def setCol (self, index, col):
+		for i in range(self.size):
+			self.board[i][index] = col[i]
+		
+	def getRow (self, index):
+		return self.board[index]
+		
+	def setRow (self, index, row):
+		self.board[index] = row
+			
 	def Execute (self, move):
 		board = self.board
 		if move == "w":

@@ -1,4 +1,5 @@
 # ignore tmp files
 *~	# tmp Tpad
 *.swp	# tmp VIM
-*.py~
+
+__pycache__/	# python cache

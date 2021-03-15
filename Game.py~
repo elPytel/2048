@@ -102,7 +102,7 @@ class Game:
 				i = i -2
 			else:
 				i = i -1
-		#print(line)
+		print(line)
 		
 		# nastavi spravnou delku
 		while len(line) != self.size:

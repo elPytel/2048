@@ -48,7 +48,10 @@ class Game:
 					free.append([y,x])
 		if len(free) < 1:
 			self.end = True
-				
+		
+	# Vygeneruje nove hodnoty
+	# Vytvoři seznam volnych pozic.
+	# Jednu z nich nahodne vybere a nahraje na ni "2"		
 	def SpawnNext (self):
 		free = []
 		for y in range(self.size):

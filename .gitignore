@@ -1,3 +1,4 @@
 # ignore tmp files
-*~
+*~	# tmp Tpad
+*.swp	# tmp VIM
 *.py~

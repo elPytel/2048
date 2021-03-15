@@ -143,7 +143,64 @@ class Game:
 			self.end = True;
 		else:
 			print("ERROR: invalid move!")
-			
+	"""
+	def Execute (self, move):
+		board = self.board
+		if move == "w":
+			for x in range(self.size):
+				for y in range(self.size-1):
+					if board[y+1][x] == 0:
+						continue
+					if board[y][x] == 0:
+						board[y][x] = board[y+1][x]
+						board[y+1][x] = 0
+					if board[y][x] == board[y+1][x]:
+						board[y][x] = board[y][x]*2
+						board[y+1][x] = 0
+		
+		elif move == "s":
+			for x in range(self.size):
+				for y in range(self.size-1, 0, -1):
+					#print("y:", y,"x:",x)
+					if board[y-1][x] == 0:
+						continue
+					if board[y][x] == 0:
+						board[y][x] = board[y-1][x]
+						board[y-1][x] = 0
+					if board[y][x] == board[y-1][x]:
+						board[y][x] *= 2
+						board[y-1][x] = 0
+		
+		# TODO
+		elif move == "a":
+			for y in range(self.size):
+				for x in range(self.size-1):
+					if board[y][x+1] == 0:
+						continue
+					if board[y][x] == 0:
+						board[y][x] = board[y][x+1]
+						board[y][x+1] = 0
+					if board[y][x] == board[y][x+1]:
+						board[y][x] *= 2
+						board[y][x+1] = 0
+		
+		elif move == "d":
+			for y in range(self.size):
+				for x in range(self.size-1, 0, -1):
+					if board[y][x-1] == 0:
+						continue
+					if board[y][x] == 0:
+						board[y][x] = board[y][x-1]
+						board[y][x-1] = 0
+					if board[y][x] == board[y][x-1]:
+						board[y][x] *= 2
+						board[y][x-1] = 0
+		
+		else:
+			print("ERROR: invalid move!")
+		
+	"""
+		
 	def End (self):
 		return self.end
 		

@@ -29,5 +29,6 @@ print(" Game score:", game.Score())		# game score
 
 """
 Predelat padani, tak aby se cisla neposouvaly jen o jedno pole, ale aspadli az dolu!
+Predelat na zadavani po jednotlivych znacich.
 END
 """

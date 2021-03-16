@@ -16,8 +16,8 @@ class Player:
 			if DEBUG:
 				print(key)
 			if key in MOVE:
-				if DEBUG:
-					print("You presed: ", key)
+				return key
+			elif key == 'q':
 				return key
 
 """

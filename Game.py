@@ -16,6 +16,8 @@ class Game:
 		self.max_score = 0
 		self.end = False
 		
+		self.logo = "logo.txt"
+		
 	def GenerateBoard (self):
 		board = []
 		for y in range(self.size):
@@ -153,7 +155,15 @@ class Game:
 			for col in row:
 				score += col;
 		return score
+	
+	def Logo (self):
+		file = open(self.logo, 'r',  encoding='utf-8')
 		
+		print()
+		for line in file.readlines():
+			print(line, end =" ")
+		print()
+			
 	def Print (self):
 		print(" --- Game board ---")
 		for row in self.board:

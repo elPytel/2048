@@ -1,2 +1,0 @@
-Size: 4 Name: Pytel Score: 0 
-Size: 4 Name: pytel Score: 0 

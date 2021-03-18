@@ -1,5 +1,9 @@
 # By Pytel
 
+import os
+
+DEBUG = True
+
 class Score:
 	
 	def __init__ (self, size, name, score):
@@ -24,6 +28,8 @@ class ScoreBoard:
 		
 	def parse (self, string):
 		array = string.split()
+		if DEBUG:
+			print("Parsed:", array)
 		size = int(array[1])
 		name = array[3]
 		score = int(array[5])

@@ -28,7 +28,7 @@ while True != False:
 		game.Evaluate()
 	
 	print(" ---Game end ---")
-	print(" Game score:", game.Score())		# game score
+	print(" Game score:", game.getScore)		# game score
 	
 	# Skore
 	print("What is your name?: ", end =" ")

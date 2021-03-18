@@ -4,7 +4,6 @@ Funkce pro hru 2048.
 """
 import Score
 import random
-import os
 
 MOVE = ["w","a","s","d"]
 DEBUG = True
@@ -23,7 +22,7 @@ class Game:
 		self.scoreBoard = None
 		
 	def ImportScore (self):
-		scb = ScoreBoard()
+		scb = Score.ScoreBoard()
 		scb.Import(self.file_score)
 		self.scoreBoard = scb
 		
@@ -65,6 +64,7 @@ class Game:
 					free.append([y,x])
 		if len(free) < 1:
 			self.end = True
+			self.score = self.Score()
 		
 	# Vygeneruje nove hodnoty
 	"""
@@ -170,6 +170,9 @@ class Game:
 			for col in row:
 				score += col;
 		return score
+		
+	def getScore (self):
+		return self.score
 	
 	def Logo (self):
 		file = open(self.logo, 'r',  encoding='utf-8')

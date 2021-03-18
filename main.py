@@ -9,7 +9,7 @@ import Player
 size = 4
 game = Game.Game(size)
 game.NewGame()
-game.ResetGame()
+game.ImportScore()
 #game.PrintGame()
 
 game.Logo()
@@ -17,6 +17,8 @@ game.Logo()
 player = Player.Player()
 
 while True != False:
+	game.ResetGame()
+	
 	while not game.End():
 		game.SpawnNext()
 		game.Print()
@@ -25,15 +27,22 @@ while True != False:
 		game.Execute(move)
 		game.Evaluate()
 	
+	print(" ---Game end ---")
+	print(" Game score:", game.Score())		# game score
+	
+	# Skore
+	print("What is your name?: ", end =" ")
+	name = input()
+	game.SaveScore(name)
+	
+	game.PrintScore()
+	
 	# Konec hry
-	print("To end the game type: q".)
+	print("To end the game type: q.")
 	answer = input()
 	if answer == "q":
+		game.ExportScore()
 		break
-
-print(" ---Game end ---")
-print(" Game score:", game.Score())		# game score
-
 
 
 """

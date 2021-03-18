@@ -2,7 +2,6 @@
 
 ## nové:
 
-
 * načítání po jednom znaku (místo potvrzení entrem)
 
 * předělat score na .score
@@ -11,5 +10,6 @@
 
 ## zpracované:
 
-opravit fyziku
+* logo
+* opravit fyziku
 

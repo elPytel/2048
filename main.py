@@ -10,7 +10,9 @@ size = 4
 game = Game.Game(size)
 game.NewGame()
 game.ResetGame()
-game.PrintGame()
+#game.PrintGame()
+
+game.Logo()
 
 player = Player.Player()
 

@@ -158,6 +158,7 @@ class Game:
 				self.setRow(i, line)
 		elif move == "q":
 			self.end = True;
+			self.score = self.Score()
 		else:
 			print("ERROR: invalid move!")
 			

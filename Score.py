@@ -24,15 +24,15 @@ class ScoreBoard:
 		self.data.append(score)
 		# tohle je sice pomaly, ale co se da delat
 		"""ut.sort(key=lambda x: x.count, reverse=True)"""
-		self.data.sort(key=lambda x: x.score)
+		self.data.sort(key=lambda x: x.score, reverse=True)
 		
 	def parse (self, string):
 		array = string.split()
 		if DEBUG:
 			print("Parsed:", array)
-		size = int(array[1])
-		name = array[3]
-		score = int(array[5])
+		size = int(array[0].split(":")[1])
+		name = array[1].split(":")[1]
+		score = int(array[2].split(":")[1])
 		return [size, name, score]
 		
 	def Import (self, file):
@@ -50,7 +50,7 @@ class ScoreBoard:
 		file = open(file, 'w', encoding='utf-8')
 		# TODO tohle je osklivy
 		for score in self.data:
-			file.write("Size: " + str(score.size) + " Name: " + str(score.name) + " Score: " + str(score.score) + " \n")
+			file.write("Size:" + str(score.size) + " Name:" + str(score.name) + " Score:" + str(score.score) + " \n")
 		
 		file.close()
 	

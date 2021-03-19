@@ -9,11 +9,12 @@ DEBUG = True
 
 class Player:
 	
-	#def __init__ (self):
+	def __init__ (self):
+		self.sc = Input._Getch()
 	
 	def Move (self):
 		while True != False:
-			key = Input._Getch()
+			key = self.sc.impl()
 			#key = input()
 			if DEBUG:
 				print(key)

@@ -38,7 +38,7 @@ while True != False:
 	game.PrintScore()
 	
 	# Konec hry
-	print("To end the game type: q.")
+	print("To end the game type: q")
 	answer = input()
 	if answer == "q":
 		game.ExportScore()

@@ -32,7 +32,8 @@ class _GetchWindows:
 
     def __call__(self):
         import msvcrt
-        return msvcrt.getch()
+        #return msvcrt.getch()
+        return msvcrt.getwche()
 
 if __name__ == '__main__':
 	getch = _Getch()

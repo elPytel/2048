@@ -1,14 +1,14 @@
-import curses
 # By Pytel and Guly
 """
 Funkce hrace pro hru 2048.
 """
-
+import curses
+stdscr = curses.initscr()
 #from curses import has_key
 #curses.BUTTON1_PRESSED
 #instance of int
 
-MOVE = ['w', 's', 'a', 'd']
+MOVE = [ord('w'), ord('s'), ord('a'), ord('d')]
 DEBUG = False
 
 class Player:
@@ -16,15 +16,23 @@ class Player:
 	#def __init__ (self):
 	
 	def Move (self):
+
+		stdscr.scrollok(True)
+		curses.noecho()
+		curses.cbreak()
+
 		while True != False:
-			key = input()
+			key = stdscr.getch()
 			if DEBUG:
 				print(key)
 			if key in MOVE:
 				return key
-			elif key in 'q':
+			elif key == ord('q'):
 				return key
 
+	curses.nocbreak()
+	curses.echo()
+	curses.endwin()
 """
 END
 

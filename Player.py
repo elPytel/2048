@@ -22,7 +22,7 @@ class Player:
 				print(key)
 			if key in MOVE:
 				return key
-			elif key in EX:
+			elif key in 'q':
 				return key
 
 """

@@ -23,7 +23,7 @@ while True != False:
 		game.SpawnNext()
 		game.Print()
 		move = player.Move()
-		print("Move:", move)
+		print("Move: %s\r" % move)		# , end=""
 		game.Execute(move)
 		game.Evaluate()
 	

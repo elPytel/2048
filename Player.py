@@ -25,24 +25,25 @@ class Player:
 			elif key == ord('q'):
 				return key
 
+if __name__ == '__main__':
+	import curses
+	stdscr = curses.initscr()
+	try:
+		stdscr.scrollok(True)
+		curses.noecho()
+		curses.cbreak()
+
+		stdscr.addstr('Stiskni q pro konec\n')
+		ch = stdscr.getch()
+		while ch != ord('q'):
+			stdscr.addstr('To nebylo ono\n')
+			ch = stdscr.getch()
+	
+	finally:
+		curses.nocbreak()
+		curses.echo()
+		curses.endwin()
+
 """
 END
-
-import curses
-stdscr = curses.initscr()
-try:
-	stdscr.scrollok(True)
-	curses.noecho()
-	curses.cbreak()
-
-	stdscr.addstr('Stiskni q pro konec\n')
-	ch = stdscr.getch()
-	while ch != ord('q'):
-		stdscr.addstr('To nebylo ono\n')
-		ch = stdscr.getch()
-	
-finally:
-	curses.nocbreak()
-	curses.echo()
-	curses.endwin()
 """

@@ -4,19 +4,11 @@ import curses
 Funkce hrace pro hru 2048.
 """
 
-from curses import has_key
+#from curses import has_key
 #curses.BUTTON1_PRESSED
 #instance of int
 
-MOVE = []
-EX = []
-MOVE[0] = curses.KEY_UP
-MOVE[1] = curses.KEY_DOWN
-MOVE[2] = curses.KEY_LEFT
-MOVE[3] = curses.KEY_RIGHT
-EX[0] = curses.KEY_EXIT
-
-
+MOVE = ['w', 's', 'a', 'd']
 DEBUG = False
 
 class Player:
@@ -35,4 +27,22 @@ class Player:
 
 """
 END
+
+import curses
+stdscr = curses.initscr()
+try:
+	stdscr.scrollok(True)
+	curses.noecho()
+	curses.cbreak()
+
+	stdscr.addstr('Stiskni q pro konec\n')
+	ch = stdscr.getch()
+	while ch != ord('q'):
+		stdscr.addstr('To nebylo ono\n')
+		ch = stdscr.getch()
+	
+finally:
+	curses.nocbreak()
+	curses.echo()
+	curses.endwin()
 """

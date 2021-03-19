@@ -2,9 +2,10 @@
 """
 Funkce hrace pro hru 2048.
 """
+import Input
 
 MOVE = ["w","a","s","d"]
-DEBUG = False
+DEBUG = True
 
 class Player:
 	
@@ -12,7 +13,8 @@ class Player:
 	
 	def Move (self):
 		while True != False:
-			key = input()
+			key = Input._Getch()
+			#key = input()
 			if DEBUG:
 				print(key)
 			if key in MOVE:

@@ -2,6 +2,7 @@
 """
 Funkce pro hru 2048.
 """
+import Score
 import random
 
 MOVE = ["w","a","s","d"]
@@ -17,6 +18,19 @@ class Game:
 		self.end = False
 		
 		self.logo = "logo.txt"
+		self.file_score = ".score.txt"
+		self.scoreBoard = None
+		
+	def ImportScore (self):
+		scb = Score.ScoreBoard()
+		scb.Import(self.file_score)
+		self.scoreBoard = scb
+		
+	def ExportScore (self):
+		self.scoreBoard.Export(self.file_score)
+		
+	def SaveScore (self, name):
+		self.scoreBoard.add(self.size, name, self.score)
 		
 	def GenerateBoard (self):
 		board = []
@@ -50,6 +64,7 @@ class Game:
 					free.append([y,x])
 		if len(free) < 1:
 			self.end = True
+			self.score = self.Score()
 		
 	# Vygeneruje nove hodnoty
 	"""
@@ -143,6 +158,7 @@ class Game:
 				self.setRow(i, line)
 		elif move == "q":
 			self.end = True;
+			self.score = self.Score()
 		else:
 			print("ERROR: invalid move!")
 			
@@ -155,6 +171,9 @@ class Game:
 			for col in row:
 				score += col;
 		return score
+		
+	def getScore (self):
+		return self.score
 	
 	def Logo (self):
 		file = open(self.logo, 'r',  encoding='utf-8')
@@ -163,11 +182,15 @@ class Game:
 		for line in file.readlines():
 			print(line, end =" ")
 		print()
+		file.close()
 			
 	def Print (self):
 		print(" --- Game board ---")
 		for row in self.board:
 			print(row)
+			
+	def PrintScore (self):
+		self.scoreBoard.Print(10)
 		
 	def PrintGame (self):
 		print(" --- Game ---")

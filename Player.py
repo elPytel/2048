@@ -12,15 +12,10 @@ MOVE = [ord('w'), ord('s'), ord('a'), ord('d')]
 DEBUG = False
 
 class Player:
-	
+	stdscr = curses.initscr()
 	#def __init__ (self):
 	
 	def Move (self):
-
-		stdscr.scrollok(True)
-		curses.noecho()
-		curses.cbreak()
-
 		while True != False:
 			key = stdscr.getch()
 			if DEBUG:
@@ -30,9 +25,6 @@ class Player:
 			elif key == ord('q'):
 				return key
 
-	curses.nocbreak()
-	curses.echo()
-	curses.endwin()
 """
 END
 

@@ -11,4 +11,3 @@
 * opravit zobrazování score
 * logo
 * opravit fyziku
-

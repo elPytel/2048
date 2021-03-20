@@ -79,8 +79,9 @@ class Game:
 					free.append([y,x])
 		#print(free)
 		if len(free) > 0:
+			number = random.choice([2, 4])
 			coord = random.choice(free)
-			self.board[coord[0]][coord[1]] = 2
+			self.board[coord[0]][coord[1]] = number
 		else:
 			self.end = True
 			

@@ -187,8 +187,26 @@ class Game:
 			
 	def Print (self):
 		print(" --- Game board ---")
+		max = 0
 		for row in self.board:
-			print(row)
+			for col in row:
+				if col > max:
+					max = col
+
+		len = len(str(max))
+		
+       		for i in range(self.size):                 #radky
+                		for j in range((self.size)*(len+1)+1):
+                        		print("-", end="")
+                		print("")
+                		for j in range(self.size):
+                        		print("|", end="")
+                        		for k in range(len):
+                               		print(" ", end="")
+                			print("|")
+        		for j in range((self.size)*(len+1)+1):
+                		print("-", end="")
+        		print("")
 			
 	def PrintScore (self):
 		self.scoreBoard.Print(10)

@@ -193,21 +193,21 @@ class Game:
 				if col > max:
 					max = col
 
-		len = len(str(max))
+		lenght = len(str(max))
 		
-       		for i in range(self.size):                 #radky
-                		for j in range((self.size)*(len+1)+1):
-                        		print("-", end="")
-                		print("")
-                		for j in range(self.size):
-                        		print("|", end="")
-                        		for k in range(len):
-                               		print(" ", end="")
-                			print("|")
-        		for j in range((self.size)*(len+1)+1):
-                		print("-", end="")
-        		print("")
-			
+		for i in range(self.size):                 #radky
+			for j in range((self.size)*(lenght+1)+1):
+				print("-", end="")
+			print("")
+			for j in range(self.size):
+				print("|", end="")
+				for k in range(lenght):
+					print(" ", end="")
+			print("|")
+		for j in range((self.size)*(lenght+1)+1):
+			print("-", end="")
+		print("")
+	
 	def PrintScore (self):
 		self.scoreBoard.Print(10)
 		

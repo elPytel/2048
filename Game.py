@@ -46,11 +46,6 @@ class Game:
 		for y in range(self.size):
 			for x in range(self.size):
 				self.board[y][x] = 0
-		"""
-		for row in self.board:
-			for col in row:
-				col = 0
-		"""
 	
 	def ResetGame (self):
 		self.ResetBoard()

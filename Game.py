@@ -4,6 +4,7 @@ Funkce pro hru 2048.
 """
 import Score
 import random
+import math
 
 MOVE = ["w","a","s","d"]
 DEBUG = True
@@ -202,9 +203,11 @@ class Game:
 			for j in range(self.size):
 				print("|", end="")
 				number = str(self.board[i][j])
-				for k in range(lenght-len(number)):
+				for k in range(math.ceil((lenght-len(number))/2)):
 					print(" ", end="")
 				print(number, end="")
+				for k in range(math.floor((lenght-len(number))/2)):
+                                        print(" ", end="")
 			print("|")
 		for j in range((self.size)*(lenght+1)+1):
 			print("-", end="")

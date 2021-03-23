@@ -19,7 +19,7 @@ class Game:
 		self.end = False
 		
 		self.logo = "logo.txt"
-		self.file_score = ".score.txt"
+		self.file_score = ".score"
 		self.scoreBoard = None
 		
 	def ImportScore (self):

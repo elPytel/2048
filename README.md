@@ -1,10 +1,10 @@
 # The game 2048
 
-Hra v terminalu.
+Hra v terminálu, podle stejnojmene předlohy. Skóre se ukladá do globální tabulky `.score`
 
-## Spuštení
+## Spuštění
 
->```
+>```bash
 > python3 main.py
 >```
 

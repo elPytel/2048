@@ -6,6 +6,8 @@ Ovladani je pomoci WASD.
 import Game
 import Player
 
+DEBUG = False
+
 size = 4
 game = Game.Game(size)
 game.NewGame()
@@ -23,7 +25,8 @@ while True != False:
 		game.SpawnNext()
 		game.Print()
 		move = player.Move()
-		print("Move:", move)
+		if DEBUG:
+			print(" Move: %s\r" % move)		# , end=""
 		game.Execute(move)
 		game.Evaluate()
 	

@@ -4,6 +4,7 @@ Funkce pro hru 2048.
 """
 import Score
 import random
+import math
 
 MOVE = ["w","a","s","d"]
 DEBUG = True
@@ -43,14 +44,16 @@ class Game:
 		return board
 		
 	def ResetBoard (self):
-		for row in self.board:
-			for col in row:
-				col = 0
+		for y in range(self.size):
+			for x in range(self.size):
+				self.board[y][x] = 0
 	
 	def ResetGame (self):
 		self.ResetBoard()
 		self.score = 0
 		self.end = False
+		if DEBUG:
+			print("Reset was performed")
 		
 	def NewGame (self):
 		self.board = self.GenerateBoard()
@@ -187,9 +190,31 @@ class Game:
 			
 	def Print (self):
 		print(" --- Game board ---")
+		max = 0
 		for row in self.board:
-			print(row)
-			
+			for col in row:
+				if col > max:
+					max = col
+
+		lenght = len(str(max))
+		
+		for i in range(self.size):                 #radky
+			for j in range((self.size)*(lenght+1)+1):
+				print("-", end="")
+			print("")
+			for j in range(self.size):
+				print("|", end="")
+				number = str(self.board[i][j])
+				for k in range(math.ceil((lenght-len(number))/2)):
+					print(" ", end="")
+				print(number, end="")
+				for k in range(math.floor((lenght-len(number))/2)):
+                                        print(" ", end="")
+			print("|")
+		for j in range((self.size)*(lenght+1)+1):
+			print("-", end="")
+		print("")
+	
 	def PrintScore (self):
 		self.scoreBoard.Print(10)
 		

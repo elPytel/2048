@@ -1,6 +1,6 @@
 # The game 2048
 
-Hra v terminálu, podle stejnojmene předlohy. Skóre se ukladá do globální tabulky `.score`
+Hra v terminálu, podle stejnojmene předlohy. Skóre se ukladá do globální  skryté tabulky `.score`.
 
 ## Spuštění
 
@@ -16,5 +16,7 @@ Hra v terminálu, podle stejnojmene předlohy. Skóre se ukladá do globální t
 * w - nahoru
 * s - dolů
 * d - vpravo
+
+
 * q	- "quit" pro ukončení
 

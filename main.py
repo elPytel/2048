@@ -8,6 +8,12 @@ import Player
 
 DEBUG = False
 
+def yesNo (string):
+	YES = ["Yes","yes","Y","y"]
+	if string in YES:
+		return True
+	return false
+
 size = 4
 game = Game.Game(size)
 game.NewGame()
@@ -34,10 +40,15 @@ while True != False:
 	print(" Game score:", game.getScore())		# game score
 	
 	# Skore
-	print("What is your name?: ", end =" ")
-	name = input()
-	game.SaveScore(name)
+	# Ulozit skore?
+	print("What save score?: ", end =" ")
+	if yesNo(input()):
+		# jak se jmenujes?
+		print("What is your name?: ", end =" ")
+		name = input()
+		game.SaveScore(name)
 	
+	# vytiskne tabulku skore
 	game.PrintScore()
 	
 	# Konec hry

@@ -9,7 +9,9 @@ Size:4 Name:Pytel Score:160
 Size:4 Name:Pytel Score:150 
 Size:4 Name:S Score:120 
 Size:4 Name:Pytel Score:88 
+Size:4 Name:q Score:70 
 Size:4 Name:Pytel Score:68 
 Size:4 Name:Pytel Score:46 
+Size:4 Name: Score:26 
 Size:4 Name:Pytel Score:24 
 Size:4 Name:Pytel Score:10 

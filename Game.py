@@ -201,8 +201,10 @@ class Game:
 			print("")
 			for j in range(self.size):
 				print("|", end="")
-				for k in range(lenght):
+				number = str(self.board[i][j])
+				for k in range(lenght-len(number)):
 					print(" ", end="")
+				print(number, end="")
 			print("|")
 		for j in range((self.size)*(lenght+1)+1):
 			print("-", end="")

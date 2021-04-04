@@ -12,8 +12,8 @@ Hra v terminálu, podle stejnojmene předlohy. Skóre se ukladá do globální  
 
 ### Pohyb:
 
-* a - vlevo
 * w - nahoru
+* a - vlevo
 * s - dolů
 * d - vpravo
 
